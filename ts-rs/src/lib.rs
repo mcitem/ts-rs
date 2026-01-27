@@ -1143,6 +1143,12 @@ impl_shadow!(as Vec<T>: impl<T: TS, const N: usize> TS for arrayvec::ArrayVec<T,
 #[cfg(feature = "arrayvec-impl")]
 impl_shadow!(as String: impl<const N: usize> TS for arrayvec::ArrayString<N>);
 
+#[cfg(feature = "sea-orm-impl")]
+impl_shadow!(as T: impl<T: sea_orm::EntityTrait + TS> TS for sea_orm::entity::compound::HasOne<T>);
+
+#[cfg(feature = "sea-orm-impl")]
+impl_shadow!(as T: impl<T: sea_orm::EntityTrait + TS> TS for sea_orm::entity::compound::HasMany<T>);
+
 #[cfg(feature = "semver-impl")]
 impl_primitives! { semver::Version => "string" }
 

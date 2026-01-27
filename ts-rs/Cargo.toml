@@ -39,6 +39,7 @@ import-esm = []
 tokio-impl = ["tokio"]
 jiff-impl = ["jiff"]
 arrayvec-impl = ["arrayvec"]
+sea-orm-impl = ["sea-orm"]
 
 [dev-dependencies]
 serde = { version = "1.0", features = ["derive"] }
@@ -66,3 +67,4 @@ serde_json = { version = "1", optional = true }
 tokio = { version = "1", features = ["sync"], optional = true }
 jiff = { version = "0.2", optional = true }
 arrayvec = { version = ">= 0.6, < 0.8", optional = true }
+sea-orm = { version = "2.0.0-rc.30", optional = true }
